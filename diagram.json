@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Gautam Ahuja",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -28.23, "left": 1.66, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": -103.9, "left": -183.2, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -168.96,
+      "left": 298.91,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -300.8,
+      "left": -90.4,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "encoder1:CLK", "uno:2", "orange", [ "h0" ] ],
+    [ "encoder1:DT", "uno:3", "blue", [ "h0" ] ],
+    [ "encoder1:SW", "uno:4", "violet", [ "h0" ] ],
+    [ "encoder1:GND", "uno:GND.1", "black", [ "h0" ] ],
+    [ "encoder1:VCC", "uno:5V", "red", [ "h221.14", "v261.48", "h-119.59" ] ],
+    [ "bz1:2", "uno:5", "red", [ "v32.24", "h-123.73" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v19.79", "h-134.68" ] ],
+    [ "uno:GND.2", "lcd1:VCC", "black", [ "v47.93", "h-267.16", "v-470.4" ] ],
+    [ "uno:A5.2", "lcd1:SCL", "green", [ "v-19.17", "h-194.26", "v-201.6" ] ],
+    [ "uno:A4.2", "lcd1:SDA", "green", [ "v-95.97", "h-213.86", "v-134.4" ] ],
+    [ "uno:GND.1", "lcd1:GND", "black", [ "v-95.97", "h-251.56", "v-144" ] ]
+  ],
+  "dependencies": {}
+}
